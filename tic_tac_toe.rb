@@ -12,14 +12,12 @@ class Board
   end
 
   def check_win_condition
-    victory = false
 
     winning_combos.each do |combo|
       
       if $board_state[combo[0]] == $board_state[combo[1]] && $board_state[combo[1]] == $board_state[combo[2]] && $board_state[combo[0]] != "_"
-        victory = true
-        puts "I detected a win"
-        return victory
+        #puts "I detected a win"
+        return true
       end
 
     end
@@ -46,5 +44,5 @@ board.x_player.make_move(4)
 board.x_player.make_move(5)
 board.x_player.make_move(6)
 
-board.check_win_condition
+puts board.check_win_condition
 
